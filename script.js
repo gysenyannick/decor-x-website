@@ -570,6 +570,71 @@
     $('#ba-viz').addEventListener('click', () => { const t = $('.mode [data-mode="viz"]'); if (t) t.click(); });
   }
 
+  // Vanaf een andere pagina: index.html#visualizer opent meteen de AI-visualizer
+  if (location.hash === '#visualizer') {
+    const t = $('.mode [data-mode="viz"]');
+    if (t) { t.click(); $('#richtprijs').scrollIntoView(); }
+  }
+
+  // Diensten: de AI-visualizer-kaart opent meteen de visualizer
+  $$('[data-open-viz]').forEach((b) => b.addEventListener('click', () => { const t = $('.mode [data-mode="viz"]'); if (t) t.click(); }));
+
+  // Diensten: de achtergrondgloed volgt de muis
+  const svcSec = $('.services');
+  if (svcSec) {
+    let raf = 0;
+    svcSec.addEventListener('pointermove', (e) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const r = svcSec.getBoundingClientRect();
+        svcSec.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        svcSec.style.setProperty('--my', `${e.clientY - r.top}px`);
+        raf = 0;
+      });
+    });
+  }
+
+  // Meer info over een dienst
+  const INFO = {
+    binnen: {
+      nr: '01', titel: 'Schilderwerken binnen', img: 'realisatie-woonkamer.jpg', dienst: 'Binnenschilderwerk',
+      tekst: 'Strakke muren en plafonds, mooie deuren en trappen. We dekken alles af en laten je woning netjes achter.',
+      lijst: ['Muren en plafonds', 'Binnendeuren, kozijnen en plinten', 'Trappen en leuningen', 'Herstel van barsten en gaten', 'Gratis kleuradvies'],
+    },
+    buiten: {
+      nr: '02', titel: 'Schilderwerken buiten', img: 'dienst-buiten.jpg', dienst: 'Buitenschilderwerk',
+      tekst: 'We beschermen alles wat buiten staat tegen regen, vorst en zon, met verf die bij ons klimaat past.',
+      lijst: ['Gevels, crepi en buitenmuren', 'Ramen en deuren in hout, PVC of aluminium', 'Poorten en garagepoorten, ook in metaal', 'Kroonlijsten en buitenschrijnwerk', 'Tuinhuizen en poolhouses'],
+    },
+  };
+  const info = $('#info');
+  if (info) {
+    let huidig = null;
+    const sluit = () => { info.hidden = true; document.body.style.overflow = ''; };
+    $$('[data-info]').forEach((b) => b.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      huidig = INFO[b.dataset.info];
+      $('#info-nr').textContent = huidig.nr;
+      $('#info-title').textContent = huidig.titel;
+      $('#info-text').textContent = huidig.tekst;
+      $('#info-img').src = huidig.img;
+      $('#info-img').alt = huidig.titel;
+      $('#info-list').innerHTML = huidig.lijst.map((x) => `<li>${x}</li>`).join('');
+      info.hidden = false;
+      document.body.style.overflow = 'hidden';
+      $('#info-close').focus();
+    }));
+    $('#info-close').addEventListener('click', sluit);
+    info.addEventListener('click', (e) => { if (e.target === info) sluit(); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && !info.hidden) sluit(); });
+    $('#info-calc').addEventListener('click', sluit);
+    $('#info-book').addEventListener('click', () => {
+      sluit();
+      $$('input[name="dienst"]', form).forEach((cb) => cb.value === huidig.dienst && (cb.checked = true));
+    });
+  }
+
   // Formulier: opent het mailprogramma met een ingevulde aanvraag
   const note = $('#note');
   form.addEventListener('submit', (e) => {
