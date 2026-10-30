@@ -6,15 +6,19 @@
   <title>DECOR-X | Het schildersbedrijf voor binnen en buiten</title>
   <meta name="description" content="DECOR-X is het schildersbedrijf voor binnen en buiten in Antwerpen, Limburg en Vlaams-Brabant. Persoonlijke service van je eerste telefoontje tot de laatste controle. Plan een gratis plaatsbezoek.">
   <meta name="theme-color" content="#1f1d1b">
-  <meta property="og:title" content="DECOR-X | Schilderwerk zonder gedoe">
-  <meta property="og:description" content="Binnen- en buitenschilderwerk met persoonlijke service van begin tot eind. Zusterbedrijf van MOS-X.">
+  <meta property="og:title" content="DECOR-X | Het schildersbedrijf voor binnen en buiten">
+  <meta property="og:description" content="DECOR-X is het schildersbedrijf voor binnen en buiten in Antwerpen, Limburg en Vlaams-Brabant. Persoonlijke service van je eerste telefoontje tot de laatste controle. Plan een gratis plaatsbezoek.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:url" content="https://gysenyannick.github.io/decor-x-website/">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:image" content="https://gysenyannick.github.io/decor-x-website/hero-woonkamer.jpg">
+  <link rel="canonical" href="https://gysenyannick.github.io/decor-x-website/">
   <link rel="icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=149">
+  <link rel="stylesheet" href="styles.css?v=205">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HousePainter", "name": "DECOR-X", "url": "https://gysenyannick.github.io/decor-x-website/", "image": "https://gysenyannick.github.io/decor-x-website/hero-woonkamer.jpg", "logo": "https://gysenyannick.github.io/decor-x-website/logo.png", "telephone": "+32468352869", "email": "info@decor-x.be", "priceRange": "€€", "description": "Binnen- en buitenschilderwerk en kaleien in Antwerpen, Limburg en Vlaams-Brabant.", "founder": {"@type": "Person", "name": "Yannick Gysen"}, "areaServed": [{"@type": "AdministrativeArea", "name": "Provincie Antwerpen"}, {"@type": "AdministrativeArea", "name": "Limburg"}, {"@type": "AdministrativeArea", "name": "Vlaams-Brabant"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "08:00", "closes": "17:00"}]}</script>
 </head>
 <body>
   <a class="skip" href="#main">Naar de inhoud</a>
@@ -24,16 +28,28 @@
     <div class="header__bar">
       <a class="header__logo" href="#top" aria-label="DECOR-X — home"><img src="logo.png" alt="DECOR-X.be" width="776" height="462"></a>
       <nav class="header__nav" id="menu" aria-label="Hoofdnavigatie">
-        <a href="#diensten">Diensten</a>
+        <div class="nav-dd">
+          <a class="nav-dd__btn" href="#diensten" aria-haspopup="true">Diensten <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="nav-dd__menu">
+            <a href="schilderwerken-binnen.html">Binnenschilderwerk</a>
+            <a href="schilderwerken-buiten.html">Buitenschilderwerk</a>
+            <a href="kaleien.html">Kaleien</a>
+          </div>
+        </div>
         <a href="realisaties.html">Realisaties</a>
         <a href="over-ons.html">Over ons</a>
-        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
-        <a class="btn btn--accent header__nav-cta" href="#richtprijs">Bereken mijn richtprijs</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--accent header__nav-cta" href="#start" data-start>Start je project</a>
       </nav>
       <div class="header__right">
+        <div class="header__social">
+          <!-- TODO: echte links naar Facebook en Instagram invullen -->
+          <a href="#" aria-label="DECOR-X op Facebook"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" aria-label="DECOR-X op Instagram"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        </div>
         <a class="header__tel" href="tel:+32468352869"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>+32 468 35 28 69</a>
-        <a class="btn btn--accent btn--sm" href="#richtprijs">Bereken mijn richtprijs <span aria-hidden="true">›</span></a>
+        <a class="btn btn--accent btn--sm" href="#start" data-start>Start je project <span aria-hidden="true">›</span></a>
         <button class="burger" id="burger" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -41,34 +57,61 @@
 
   <main id="main">
     <!-- ============ HERO ============ -->
-    <section class="hero" id="top">
+    <section class="hero hero--center" id="top">
       <div class="hero__photo" aria-hidden="true"><video class="hero__video" id="hero-video" muted loop playsinline preload="metadata" poster="hero-video-poster.jpg?v=4" data-src="hero-video.mp4?v=4" data-src-mobiel="hero-video-mobiel.mp4?v=4" data-poster-mobiel="hero-video-poster-mobiel.jpg?v=4"></video></div>
       <div class="wrap hero__in">
-        <p class="region"><svg viewBox="0 0 18 13" width="18" height="13" aria-hidden="true"><rect width="6" height="13" fill="#1a1a1a"/><rect x="6" width="6" height="13" fill="#fdda24"/><rect x="12" width="6" height="13" fill="#ef3340"/></svg>Actief regio Antwerpen, Limburg, Vlaams-Brabant</p>
-        <h1>Schilderwerk dat <span class="hl">jarenlang mooi blijft.</span></h1>
+        <h1>Strak schilderwerk dat<br> <span class="hl">jarenlang mooi blijft.</span></h1>
         <p class="hero__lead">Binnen- en buitenschilderwerk, met persoonlijke service van je eerste telefoontje tot de laatste controle.</p>
         <div class="hero__cta">
-          <a class="btn btn--accent btn--lg" href="#richtprijs">Bereken mijn richtprijs <span aria-hidden="true">›</span></a>
-          <a class="btn btn--ghost btn--lg" href="#contact">Plan een gratis plaatsbezoek</a>
+          <a class="btn btn--accent btn--lg" href="#start" data-start>Start je project <span aria-hidden="true">›</span></a>
+          <a class="btn btn--ghost btn--lg" href="#richtprijs">Bereken je richtprijs</a>
         </div>
         <div class="proof">
-          <a class="proof__g" href="https://www.mos-x.be" target="_blank" rel="noopener" aria-label="5.0 op 5 uit 16 Google-recensies voor het team achter MOS-X">
+          <a class="proof__g" href="https://www.google.com/search?q=MOS-X+%7C+Dakontmossing+%26+Coating+Reviews" target="_blank" rel="noopener" aria-label="5.0 op 5 uit 16 Google-recensies">
             <span class="gword" aria-hidden="true"><i>G</i><i>o</i><i>o</i><i>g</i><i>l</i><i>e</i></span>
             <b>5.0</b> <span class="stars" aria-hidden="true">★★★★★</span> <span>16 recensies</span>
           </a>
-          <p class="proof__tv">Het team achter MOS-X, bekend van <span class="nw tvlogo"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 3l4 4 4-4"/></svg> <b>VTM LIFESTYLE</b></span> <em>&amp;</em> <i>Wonen</i></p>
         </div>
       </div>
+      <ul class="hero-bar" aria-label="Waarom DECOR-X">
+        <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Virtuele preview</span></li>
+        <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Directe richtprijs</span></li>
+        <li><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.8-1.5 7.7 5-2.7 5 2.7-1.5-7.7"/></svg><span>Garantie op schilderwerken</span></li>
+      </ul>
     </section>
 
     <!-- ============ RICHTPRIJS ============ -->
-    <section class="picker-section" id="richtprijs">
+    <section class="picker-section tbx-section" id="richtprijs">
+      <svg class="tbx-rings" viewBox="0 0 800 800" aria-hidden="true">
+        <g fill="none" stroke="#beab90">
+          <circle cx="800" cy="400" r="120" stroke-width="1.5" opacity=".35"/>
+          <circle cx="800" cy="400" r="210" stroke-width="1.5" opacity=".3"/>
+          <circle cx="800" cy="400" r="300" stroke-width="1.5" opacity=".25"/>
+          <circle cx="800" cy="400" r="390" stroke-width="1.5" opacity=".2"/>
+          <circle cx="800" cy="400" r="480" stroke-width="1.5" opacity=".15"/>
+          <circle cx="800" cy="400" r="570" stroke-width="1.5" opacity=".1"/>
+        </g>
+      </svg>
       <div class="wrap">
-        <div class="mode reveal" role="tablist" aria-label="Kies een tool">
-          <button type="button" role="tab" class="is-on" aria-selected="true" data-mode="prijs">Richtprijs</button>
-          <button type="button" role="tab" aria-selected="false" data-mode="viz">AI-visualizer<span class="mode__new">Nieuw</span></button>
-        </div>
-        <div class="calc reveal" id="calc">
+        <div class="tbx reveal" id="toolbox">
+          <div class="tbx__head">
+            <h2>Jouw toolbox voor <span class="hl">een perfect schilderwerk.</span></h2>
+            <p>Gratis tools om kleuren te testen, je verf te berekenen en meteen je prijs te kennen.</p>
+          </div>
+          <div class="tbx__tabs" role="tablist" aria-label="Kies een tool">
+            <button class="tbx__tab" type="button" role="tab" aria-selected="true" aria-controls="tool-kleur" data-tool="kleur">
+              <span class="tbx__nr">01</span><span class="tbx__ic"><svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="6" width="26" height="10" rx="2.5"/><path d="M34 11h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H22v6"/><rect x="18" y="27" width="8" height="15" rx="2"/><path d="M12 16v3M17 16v5"/></svg></span><span class="tbx__txt"><b>AI-visualizer</b><small>Schilder je woning virtueel</small></span>
+            </button>
+            <button class="tbx__tab" type="button" role="tab" aria-selected="false" aria-controls="tool-verf" data-tool="verf">
+              <span class="tbx__nr">02</span><span class="tbx__ic"><svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 14h22v22a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><path d="M8 14c0-3 5-5 11-5s11 2 11 5"/><path d="M14 20v6"/><rect x="26" y="24" width="15" height="18" rx="2.5"/><path d="M29 28h9M29 33h2M33 33h2M37 33h1M29 37h2M33 37h2M37 37h1"/></svg></span><span class="tbx__txt"><b>Verfcalculator</b><small>Hoeveel verf heb je nodig?</small></span>
+            </button>
+            <button class="tbx__tab" type="button" role="tab" aria-selected="false" aria-controls="tool-prijs" data-tool="prijs">
+              <span class="tbx__nr">03</span><span class="tbx__ic"><svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="5" width="24" height="38" rx="4"/><path d="M12 13h24"/><path d="M27 21.5c-1-1.5-2.5-2-4-2-2.2 0-3.6 1.2-3.6 2.8 0 4 7.6 2 7.6 6.2 0 1.7-1.6 3-4 3-1.6 0-3.2-.6-4.2-2M23 17.5v2M23 31.5v2"/></svg></span><span class="tbx__txt"><b><span class="tbx__long">Directe </span>richtprijs</b><small>Wat gaat het kosten?</small></span>
+            </button>
+          </div>
+          <div class="tbx__body">
+          <div class="tbx__panel" id="tool-prijs" role="tabpanel" hidden>
+        <div class="calc" id="calc">
           <aside class="calc__intro">
             <div data-mode-panel="prijs">
               <p class="eyebrow">Binnen 60 seconden</p>
@@ -79,18 +122,9 @@
                 <li>Vrijblijvend en zonder verplichtingen</li>
               </ul>
             </div>
-            <div data-mode-panel="viz">
-              <p class="eyebrow">Gratis AI-visualizer</p>
-              <h2>Zie je nieuwe <span class="hl">kleur</span><br>voor we starten</h2>
-              <ul class="calc__bullets">
-                <li>Upload een foto van je ruimte</li>
-                <li>AI herkent je muren automatisch</li>
-                <li>Probeer elke kleur, meteen</li>
-              </ul>
-            </div>
           </aside>
           <div class="calc__main">
-          <ol class="calc__tabs" aria-hidden="true"><li>1. Soort werk</li><li>2. Wat schilderen</li><li>3. Extra's</li><li>4. Adres</li><li>5. Richtprijs</li></ol>
+          <ol class="calc__tabs" aria-hidden="true"><li>1. Soort werk</li><li>2. Wat schilderen</li><li>3. Extra's</li><li>4. Richtprijs</li></ol>
           <h3 class="calc__label" id="calc-label">Wat wil je laten schilderen?</h3>
 
           <div class="calc__step is-on" data-step="1">
@@ -184,16 +218,8 @@
             </div>
           </div>
 
-          <div class="calc__step" data-step="4">
-            <p class="calc__hint calc__hint--top">We gebruiken je adres enkel om je richtprijs te berekenen en een plaatsbezoek in te plannen.</p>
-            <div class="calc__fields">
-              <label class="calc__field calc__field--wide"><span>Straat en huisnummer</span><input type="text" id="a-straat" autocomplete="street-address"></label>
-              <label class="calc__field"><span>Postcode</span><input type="text" id="a-postcode" inputmode="numeric" maxlength="4" autocomplete="postal-code" placeholder="2000"></label>
-              <label class="calc__field"><span>Gemeente</span><input type="text" id="a-gemeente" autocomplete="address-level2"></label>
-            </div>
-          </div>
 
-          <div class="calc__step calc__result" data-step="5" aria-live="polite">
+          <div class="calc__step calc__result" data-step="4" aria-live="polite">
             <p class="calc__kicker">Jouw richtprijs</p>
             <p class="calc__price" id="calc-price">€ 0</p>
             <p class="calc__note">Excl. btw. Voor woningen ouder dan 10 jaar geldt vaak 6% btw. Je definitieve, vaste prijs krijg je na een gratis plaatsbezoek.</p>
@@ -208,146 +234,265 @@
             <button class="btn btn--accent" type="button" id="calc-next" disabled>Volgende ›</button>
           </div>
 
-          <div class="viz" data-mode-panel="viz">
-            <h3 class="calc__label viz__title">Hoe zou jouw ruimte eruitzien?</h3>
-            <div class="viz__grid">
-              <div class="viz__stage">
-                <div class="viz__start">
-                  <label class="viz__upload"><input type="file" id="viz-file" accept="image/*"><b>Upload een foto</b><span>Van je kamer of van je gevel</span></label>
-                  <p class="viz__or">Of probeer een van onze foto's</p>
-                  <div class="viz__samples">
-                    <button type="button" data-src="realisatie-woonkamer.jpg"><img src="realisatie-woonkamer.jpg" alt="Woonkamer"></button>
-                    <button type="button" data-src="hero-woonkamer.jpg"><img src="hero-woonkamer.jpg" alt="Leefruimte"></button>
-                    <button type="button" data-src="dienst-buiten.jpg"><img src="dienst-buiten.jpg" alt="Gevel"></button>
-                  </div>
+          </div>
+        </div>
+          </div>
+          <div class="tbx__panel" id="tool-kleur" role="tabpanel">
+            <div class="tbx-ba" id="tbx-ba" style="--pos: 50%">
+              <img src="voorna-voor.jpg" alt="Woning met witte gevel, zoals ze nu is" width="1154" height="866">
+              <img class="tbx-ba__after" src="voorna-na.jpg" alt="Dezelfde woning met een greige gevel" width="1154" height="866">
+              <span class="tbx-ba__label">Nu</span>
+              <span class="tbx-ba__label tbx-ba__label--after">Visualisatie</span>
+              <span class="tbx-ba__handle" aria-hidden="true">‹ ›</span>
+              <input class="tbx-ba__range" type="range" min="0" max="100" value="50" aria-label="Schuif om voor en na te vergelijken">
+              <button class="btn btn--accent tbx-ba__go" type="button" data-viz-start>Probeer de AI-visualizer <span aria-hidden="true">›</span></button>
+            </div>
+            <div class="viz" id="visualizer" hidden>
+          <h3 class="calc__label viz__title">Hoe zou jouw ruimte eruitzien?</h3>
+          <div class="viz__grid">
+            <div class="viz__stage">
+              <div class="viz__start">
+                <label class="viz__upload"><input type="file" id="viz-file" accept="image/*"><b>Upload een foto</b><span>Van je kamer of van je gevel</span></label>
+                <p class="viz__or">Of probeer een van onze foto's</p>
+                <div class="viz__samples">
+                  <button type="button" data-src="realisatie-woonkamer.jpg"><img src="realisatie-woonkamer.jpg" alt="Woonkamer"></button>
+                  <button type="button" data-src="hero-woonkamer.jpg"><img src="hero-woonkamer.jpg" alt="Leefruimte"></button>
+                  <button type="button" data-src="dienst-buiten.jpg"><img src="dienst-buiten.jpg" alt="Gevel"></button>
                 </div>
               </div>
-              <ol class="viz__steps">
-                <li><b>Upload een foto</b>Hoe minder meubels, hoe beter.</li>
-                <li><b>Tik op een vlak</b>Muur, plafond, deur of gevel.</li>
-                <li><b>Kies een kleur</b>Elk vlak zijn eigen kleur.</li>
-              </ol>
             </div>
-            <p class="calc__hint">Je foto blijft op je toestel, de AI werkt in je browser. Het resultaat is een indruk: de echte kleur bekijken we samen bij het plaatsbezoek.</p>
+            <ol class="viz__steps">
+              <li><b>Upload een foto</b>Hoe minder meubels, hoe beter.</li>
+              <li><b>Tik op een vlak</b>Muur, plafond, deur of gevel.</li>
+              <li><b>Kies een kleur</b>Elk vlak zijn eigen kleur.</li>
+            </ol>
+          </div>
+          <p class="calc__hint">Je foto blijft op je toestel, de AI werkt in je browser. Het resultaat is een indruk: de echte kleur bekijken we samen bij het plaatsbezoek.</p>
+            </div>
+          </div>
+          <div class="tbx__panel" id="tool-verf" role="tabpanel" hidden>
+            <div class="pc" id="pc">
+              <h3 class="calc__label">Hoeveel verf heb je nodig?</h3>
+              <div class="seg seg--big">
+                <label><input type="radio" name="pc-mode" value="kamer" checked><span><b>Een kamer</b>We rekenen de muren uit voor je</span></label>
+                <label><input type="radio" name="pc-mode" value="m2"><span><b>Ik ken de oppervlakte</b>Vul zelf het aantal m² in</span></label>
+              </div>
+              <div class="pc__part" data-pc="kamer">
+                <div class="calc__fields pc__fields">
+                  <label class="calc__field"><span>Lengte (m)</span><input type="number" id="pc-l" value="4" min="0" step="0.1" inputmode="decimal"></label>
+                  <label class="calc__field"><span>Breedte (m)</span><input type="number" id="pc-b" value="4" min="0" step="0.1" inputmode="decimal"></label>
+                  <label class="calc__field"><span>Hoogte (m)</span><input type="number" id="pc-h" value="2.5" min="0" step="0.1" inputmode="decimal"></label>
+                  <label class="calc__field"><span>Aantal ramen</span><input type="number" id="pc-ramen" value="1" min="0" step="1" inputmode="decimal"></label>
+                  <label class="calc__field"><span>Aantal deuren</span><input type="number" id="pc-deuren" value="1" min="0" step="1" inputmode="decimal"></label>
+                </div>
+                <div class="chips pc__chips"><label><input type="checkbox" id="pc-plafond"><span>Plafond ook schilderen</span></label></div>
+              </div>
+              <div class="pc__part" data-pc="m2" hidden>
+                <div class="calc__fields pc__fields"><label class="calc__field"><span>Oppervlakte (m²)</span><input type="number" id="pc-m2" value="40" min="0" step="1" inputmode="decimal"></label></div>
+              </div>
+              <p class="calc__q">Aantal lagen</p>
+              <div class="seg"><label><input type="radio" name="pc-lagen" value="1"><span>1 laag</span></label><label><input type="radio" name="pc-lagen" value="2" checked><span>2 lagen</span></label><label><input type="radio" name="pc-lagen" value="3"><span>3 lagen</span></label></div>
+              <p class="calc__q">Ondergrond</p>
+              <div class="seg"><label><input type="radio" name="pc-ond" value="10" checked><span>Glad, al geschilderd</span></label><label><input type="radio" name="pc-ond" value="8"><span>Nieuw pleisterwerk</span></label><label><input type="radio" name="pc-ond" value="6"><span>Ruw, bv. gevel of crepi</span></label></div>
+              <div class="pc__result" aria-live="polite">
+                <p class="calc__kicker">Je hebt ongeveer nodig</p>
+                <p class="calc__price" id="pc-liter">8 liter</p>
+                <p class="pc__pots" id="pc-info">Voor 40 m², 2 lagen · bv. 1 pot van 10 liter</p>
+                <p class="calc__note">Een indicatie op basis van een gemiddeld verbruik. Het echte verbruik hangt af van de verf en de ondergrond.</p>
+              </div>
+              <div class="calc__actions">
+                <button class="btn btn--accent btn--lg" type="button" data-tool-open="prijs">Laat het ons schilderen <span aria-hidden="true">›</span></button>
+                <a class="btn btn--line btn--lg" href="#contact" id="pc-book">Plan een gratis plaatsbezoek</a>
+              </div>
+            </div>
           </div>
           </div>
         </div>
-        <ul class="perks reveal">
-          <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><b>5.0 op Google</b><span>Het team achter MOS-X</span></li>
-          <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>Virtuele preview</b><span>Zie vooraf hoe je kleur staat</span></li>
-          <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><b>Direct een richtprijs</b><span>Geen verrassingen achteraf</span></li>
-          <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg><b>Dubbele garantie</b><span>2 jaar binnen, tot 10 jaar buiten</span></li>
+      </div>
+    </section>
+
+
+    <!-- ============ DIENSTEN ============ -->
+    <section class="svl" id="diensten">
+      <svg class="svl-bg" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-40 470 C 220 360, 420 560, 700 440 S 1100 300, 1260 380" fill="none" stroke="#beab90" stroke-width="90" stroke-linecap="round" opacity=".10"/>
+        <path d="M-40 520 C 260 430, 460 600, 760 500 S 1120 380, 1260 450" fill="none" stroke="#beab90" stroke-width="26" stroke-linecap="round" opacity=".12"/>
+      </svg>
+      <div class="wrap">
+        <div class="svl__head">
+          <div>
+            <p class="eyebrow reveal">Onze diensten</p>
+            <h2 class="reveal">Vakwerk tot in<br> <span class="hl">de kleinste details.</span></h2>
+          </div>
+          <div class="svl__side">
+            <p class="reveal">Of je nu één kamer wil opfrissen of je gevel een nieuwe look wil geven: we bereiden alles grondig voor en werken het netjes af.</p>
+            <div class="svl__cta reveal">
+              <a class="btn btn--accent" href="#contact">Gratis plaatsbezoek <span aria-hidden="true">›</span></a>
+              <a class="btn btn--line" href="https://wa.me/32468352869" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg> Stuur een WhatsApp</a>
+            </div>
+          </div>
+        </div>
+        <ul class="svl__list">
+          <li><a class="svl__row reveal" href="schilderwerken-binnen.html">
+            <span class="svl__img"><img src="realisatie-woonkamer.jpg" alt="" loading="lazy" style="object-position:50% 45%"></span>
+            <span class="svl__txt"><small>01</small><b>Binnenschilderwerk</b><span>Muren, plafonds, deuren, trappen, plinten, kasten, … Strak afgewerkt, met respect voor je interieur.</span></span>
+            <span class="svl__go"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a></li>
+          <li><a class="svl__row reveal" href="schilderwerken-buiten.html">
+            <span class="svl__img"><img src="dienst-buiten.jpg" alt="" loading="lazy" style="object-position:50% 40%"></span>
+            <span class="svl__txt"><small>02</small><b>Buitenschilderwerk</b><span>Gevels, ramen, deuren, balustrades, dakgoten, tuinhuizen, … Mooi én beschermd tegen weer en wind.</span></span>
+            <span class="svl__go"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a></li>
+          <li><a class="svl__row reveal" href="kaleien.html">
+            <span class="svl__img"><img src="dienst-kaleien.jpg" alt="" loading="lazy" style="object-position:50% 45%"></span>
+            <span class="svl__txt"><small>03</small><b>Kaleien</b><span>Gevels, tuinmuren, schouwen, … Een egale, minerale afwerking die tijdloos en ademend is.</span></span>
+            <span class="svl__go"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a></li>
         </ul>
       </div>
     </section>
 
-    <!-- ============ VOOR EN NA ============ -->
-    <section class="ba" id="realisaties">
-      <div class="wrap ba__grid">
-        <figure class="ba__fig reveal">
-          <div class="ba__frame" id="ba" style="--pos: 50%">
-            <img src="voorna-voor.jpg" alt="Woning met witte gevel, zoals ze nu is" width="1154" height="866">
-            <img class="ba__after" src="voorna-na.jpg" alt="Dezelfde woning met een greige gevel" width="1154" height="866">
-            <span class="ba__label">Nu</span>
-            <span class="ba__label ba__label--after">Visualisatie</span>
-            <span class="ba__handle" aria-hidden="true">‹ ›</span>
-            <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Schuif om voor en na te vergelijken">
+    <!-- ============ GARANTIE ============ -->
+    <section class="wr" id="garantie">
+      <div class="wr__in">
+        <div class="wr__head">
+          <p class="eyebrow eyebrow--accent reveal">Garantie</p>
+          <h2 class="reveal">Onze <span class="hl">garantie.</span></h2>
+        </div>
+        <div class="wr__cards">
+          <div class="wr__card reveal">
+            <svg class="wr__seal" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="wr-a" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs>
+              <circle cx="100" cy="100" r="98" fill="#beab90"/>
+              <circle cx="100" cy="100" r="92" fill="#1f1d1b"/>
+              <text font-family="Montserrat, sans-serif" font-weight="800" font-size="17" letter-spacing="4.2" fill="#beab90"><textPath href="#wr-a">GARANTIE • DECOR-X • GARANTIE • DECOR-X •</textPath></text>
+              <circle cx="100" cy="100" r="54" fill="#beab90"/>
+              <text x="100" y="112" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="56" fill="#1f1d1b">2</text>
+              <text x="100" y="132" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="12" letter-spacing="3" fill="#1f1d1b">JAAR</text>
+            </svg>
+            <b>2 jaar garantie</b>
+            <span>Binnenschilderwerk</span>
           </div>
-        </figure>
-        <div class="ba__copy">
-          <h2 class="reveal">Zie het <span class="hl">verschil.</span></h2>
-          <p class="reveal">Schuif om te vergelijken. De juiste kleur en een zorgvuldige voorbereiding laten een woning er als nieuw uitzien, en beschermen ze jarenlang.</p>
-          <div class="ba__cta reveal">
-            <a class="btn btn--accent" href="#richtprijs" id="ba-viz">Probeer de AI-visualizer</a>
-            <a class="btn btn--white" href="#contact">Plan een gratis plaatsbezoek</a>
+          <div class="wr__card reveal">
+            <svg class="wr__seal" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="wr-b" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs>
+              <circle cx="100" cy="100" r="98" fill="#beab90"/>
+              <circle cx="100" cy="100" r="92" fill="#1f1d1b"/>
+              <text font-family="Montserrat, sans-serif" font-weight="800" font-size="17" letter-spacing="4.2" fill="#beab90"><textPath href="#wr-b">GARANTIE • DECOR-X • GARANTIE • DECOR-X •</textPath></text>
+              <circle cx="100" cy="100" r="54" fill="#beab90"/>
+              <text x="100" y="110" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="46" fill="#1f1d1b">10</text>
+              <text x="100" y="132" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="12" letter-spacing="3" fill="#1f1d1b">JAAR</text>
+            </svg>
+            <b>Tot 10 jaar garantie</b>
+            <span>Buitenschilderwerk</span>
           </div>
         </div>
+        <p class="wr__note reveal">Afhankelijk van de ondergrond en het verfsysteem. Je leest het duidelijk in je offerte. <a href="garantie.html">Bekijk de garantievoorwaarden ›</a></p>
       </div>
     </section>
 
-    <!-- ============ OVER ONS ============ -->
-    <section class="about" id="over-ons">
-      <div class="wrap about__grid">
-        <div class="about__copy">
-          <p class="eyebrow reveal">Wie we zijn</p>
-          <h2 class="reveal">Je woning verdient meer<br> <span class="hl">dan een snelle laag verf.</span></h2>
-          <p class="reveal">Bij <span class="nw">DECOR-X</span> weten we dat je woning je belangrijkste investering is. Daarom bouwden Yannick en zijn team jarenlang aan een werkwijze die draait om vier dingen: nauwkeurig werk, een grondige voorbereiding, verf van topkwaliteit en een afwerking die jaren meegaat.</p>
-          <div class="about__cta reveal">
-            <a class="btn btn--accent" href="https://wa.me/32468352869?text=Hallo%20Yannick%2C%20ik%20wil%20graag%20kennismaken." target="_blank" rel="noopener">Maak kennis met Yannick <span aria-hidden="true">›</span></a>
-            <a class="btn btn--line" href="#contact">Plan een gratis plaatsbezoek</a>
-          </div>
-        </div>
-        <div class="about__media reveal">
-          <figure class="about__photo">
-            <!-- Foto volgt: vervang deze div door <img src="yannick.jpg" alt="Yannick, oprichter DECOR-X"> -->
-            <div class="about__placeholder" aria-hidden="true"></div>
-            <figcaption><b>Yannick</b><span>Oprichter <span class="nw">DECOR-X</span></span></figcaption>
-          </figure>
-          <figure class="about__inset"><img src="dienst-binnen.jpg" alt="Strak afgewerkte keuken en leefruimte" loading="lazy"></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ DIENSTEN ============ -->
-    <section class="services" id="diensten">
+    <!-- ============ REVIEWS ============ -->
+    <section class="rv" id="reviews">
+      <svg class="rv-quote" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V28C0 12 8 2 24 0l2 7C17 10 13 16 13 24h11v24zm38 0V28c0-16 8-26 24-28l2 7c-9 3-13 9-13 17h11v24z" fill="currentColor"/></svg>
       <div class="wrap">
-        <div class="svc-head">
-          <div>
-            <h2 class="reveal">Onze <span class="hl">diensten.</span></h2>
-          </div>
-          <p class="reveal">Elke woning is anders. Elk project krijgt dezelfde aandacht voor detail, zorg en communicatie.</p>
-        </div>
-        <div class="sv-grid sv-grid--2">
-          <a class="sv reveal" href="schilderwerken-binnen.html">
-            <img src="realisatie-woonkamer.jpg" alt="" loading="lazy" style="object-position:50% 45%">
-            <div class="sv__body"><h3>Binnenschilderwerken</h3><span class="sv__arrow" aria-hidden="true">›</span></div>
+        <div class="rv__head">
+          <p class="eyebrow reveal">Reviews</p>
+          <h2 class="reveal">Niet onze woorden, <span class="hl">maar die van onze klanten.</span></h2>
+          <a class="rv__score reveal" href="https://www.google.com/search?q=MOS-X+%7C+Dakontmossing+%26+Coating+Reviews" target="_blank" rel="noopener">
+            <span class="gword" aria-hidden="true"><i>G</i><i>o</i><i>o</i><i>g</i><i>l</i><i>e</i></span>
+            <b>5,0</b><span class="rv__stars" aria-hidden="true">★★★★★</span><small>16 reviews</small>
           </a>
-          <a class="sv reveal" href="schilderwerken-buiten.html">
-            <img src="dienst-buiten.jpg" alt="" loading="lazy" style="object-position:50% 40%">
-            <div class="sv__body"><h3>Buitenschilderwerken</h3><span class="sv__arrow" aria-hidden="true">›</span></div>
+        </div>
+        <div class="rv__list">
+          <figure class="rv__card reveal">
+            <span class="rv__stars" aria-label="5 op 5 sterren">★★★★★</span>
+            <blockquote>“Heel tevreden! Vlotte samenwerking, duidelijke uitleg en mooi werk geleverd.”</blockquote>
+            <figcaption><span class="rv__av" aria-hidden="true">K</span><span><b>Kjenta V.</b><small>Google-review</small></span></figcaption>
+          </figure>
+          <figure class="rv__card reveal">
+            <span class="rv__stars" aria-label="5 op 5 sterren">★★★★★</span>
+            <blockquote>“Zeer aangenaam om met Yannick samen te werken.”</blockquote>
+            <figcaption><span class="rv__av" aria-hidden="true">J</span><span><b>Joppe D.</b><small>Google-review</small></span></figcaption>
+          </figure>
+          <a class="rv__more reveal" href="https://www.google.com/search?q=MOS-X+%7C+Dakontmossing+%26+Coating+Reviews" target="_blank" rel="noopener">
+            <span class="rv__stars" aria-hidden="true">★★★★★</span>
+            <b>Benieuwd naar de rest?</b>
+            <span>Lees alle reviews op Google en ontdek waarom klanten Yannick aanbevelen.</span>
+            <span class="rv__more-go">Lees alle reviews <span aria-hidden="true">›</span></span>
           </a>
         </div>
       </div>
     </section>
+
+    <!-- ============ WAAROM DECOR-X ============ -->
+    <section class="wy" id="over-ons">
+      <div class="wrap wy__grid">
+        <div class="wy__side">
+          <p class="eyebrow reveal">Waarom <span class="nw">DECOR-X</span></p>
+          <h2 class="reveal">Een schilder die zijn<br> <span class="hl">beloftes nakomt.</span></h2>
+          <p class="reveal">Een schilder kiezen draait om vertrouwen én kwaliteit. Daarom leveren we vakwerk dat jarenlang mooi blijft, en maken we je vijf duidelijke beloftes die we ook nakomen.</p>
+          <figure class="wy__photo reveal">
+            <!-- Foto volgt: vervang deze afbeelding door <img src="yannick.jpg" alt="Yannick Gysen"> -->
+            <img src="hero-woonkamer.jpg" alt="Strak geschilderde leefruimte" loading="lazy">
+            <figcaption><b>Yannick Gysen</b><span>Oprichter <span class="nw">DECOR-X</span></span></figcaption>
+          </figure>
+        </div>
+        <div class="wy__main">
+          <ol class="wy__list">
+          <li class="reveal"><span class="wy__nr">01</span><div><b>We komen wanneer we zeggen.</b><p>Je krijgt een vaste startdatum en we houden je op de hoogte. Geen dagen wachten op een schilder die niet opdaagt.</p></div></li>
+          <li class="reveal"><span class="wy__nr">02</span><div><b>De prijs blijft de prijs.</b><p>Na het plaatsbezoek krijg je een vaste prijs, zwart op wit. Meerwerk doen we enkel na jouw akkoord.</p></div></li>
+          <li class="reveal"><span class="wy__nr">03</span><div><b>Je hoort snel van ons.</b><p>Een slim, geautomatiseerd systeem volgt elke aanvraag en offerte op. Je hoeft nooit achter ons aan te bellen.</p></div></li>
+          <li class="reveal"><span class="wy__nr">04</span><div><b>Je huis blijft netjes.</b><p>We dekken alles af en ruimen elke dag op. Je leeft gewoon verder terwijl wij schilderen.</p></div></li>
+          <li class="reveal"><span class="wy__nr">05</span><div><b>Het blijft jaren mooi.</b><p>Een grondige voorbereiding en enkel premium verf. Daarom durven we er garantie op te geven.</p></div></li>
+          </ol>
+          <div class="wy__cta reveal">
+            <a class="btn btn--accent" href="#start" data-start>Start je project <span aria-hidden="true">›</span></a>
+            <a class="btn btn--line" href="over-ons.html">Meer over ons</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- ============ TRAJECT ============ -->
     <section class="proc-section">
       <div class="wrap">
         <p class="eyebrow eyebrow--center reveal">Zo werkt het</p>
-        <h2 class="sec-title reveal">Ons eenvoudige proces <span class="hl">in twee delen.</span></h2>
+        <h2 class="sec-title reveal">Zo verloopt jouw traject <span class="hl">met <span class="nw">DECOR-X.</span></span></h2>
+        <p class="sec-sub reveal">Duidelijk, transparant en zonder verrassingen. Van je eerste richtprijs tot de laatste controle.</p>
         <div class="proc">
           <figure class="proc__photo reveal"><img src="dienst-buiten.jpg" alt="Gevel van een woning na het schilderwerk" loading="lazy"></figure>
           <div class="proc__card reveal">
             <span class="proc__tag">Deel 1</span>
-            <h3>De offerte</h3>
+            <h3>Je offerte</h3>
             <ol class="proc__list">
-              <li><span class="proc__nr">1</span><div><h4>Bereken je richtprijs</h4><p>Weet in 60 seconden wat je ongeveer mag verwachten.</p></div></li>
-              <li><span class="proc__nr">2</span><div><h4>Neem contact op</h4><p>Bel, stuur een WhatsApp of vraag online een plaatsbezoek.</p></div></li>
-              <li><span class="proc__nr">3</span><div><h4>Gratis plaatsbezoek</h4><p>We bekijken je woning samen en luisteren naar je wensen.</p></div></li>
-              <li><span class="proc__nr">4</span><div><h4>Offerte op maat</h4><p>Een duidelijke offerte per onderdeel, zonder verrassingen.</p></div></li>
+              <li><span class="proc__nr">1</span><div><h4>Richtprijs berekenen</h4><p>Bereken online een richtprijs en krijg meteen een idee van de kost.</p></div></li>
+              <li><span class="proc__nr">2</span><div><h4>Gratis plaatsbezoek</h4><p>We bekijken je woning, luisteren naar je wensen en geven gratis kleuradvies.</p></div></li>
+              <li><span class="proc__nr">3</span><div><h4>Offerte op maat</h4><p>Een duidelijke offerte met een vaste prijs, afgestemd op jouw woning.</p></div></li>
             </ol>
           </div>
           <div class="proc__card reveal">
             <span class="proc__tag">Deel 2</span>
-            <h3>Je project</h3>
+            <h3>Je woning</h3>
             <ol class="proc__list">
-              <li><span class="proc__nr">5</span><div><h4>Gratis kleuradvies</h4><p>Kies je kleur samen met ons of test ze in de AI-visualizer.</p></div></li>
-              <li><span class="proc__nr">6</span><div><h4>Vaste startdatum</h4><p>We starten op de afgesproken dag en houden je op de hoogte.</p></div></li>
-              <li><span class="proc__nr">7</span><div><h4>Voorbereiden &amp; schilderen</h4><p>Alles afgedekt, grondig voorbereid en geschilderd met topverf.</p></div></li>
-              <li><span class="proc__nr">8</span><div><h4>Controle en garantie</h4><p>We lopen alles samen na en je krijgt je garantie op papier.</p></div></li>
+              <li><span class="proc__nr">4</span><div><h4>Vaste startdatum</h4><p>Na je akkoord plannen we een vaste startdatum en houden we je op de hoogte.</p></div></li>
+              <li><span class="proc__nr">5</span><div><h4>Vakkundige uitvoering</h4><p>We beschermen je woning, bereiden alles grondig voor en schilderen met premium verf.</p></div></li>
+              <li><span class="proc__nr">6</span><div><h4>Oplevering &amp; nazorg</h4><p>We lopen alles samen met je na en blijven ook daarna bereikbaar.</p></div></li>
             </ol>
           </div>
         </div>
-        <div class="proc__cta reveal"><a class="btn btn--accent btn--lg" href="#contact">Plan een gratis plaatsbezoek <span aria-hidden="true">›</span></a></div>
+        <div class="proc__cta reveal"><a class="btn btn--accent btn--lg" href="#start" data-start>Start je project <span aria-hidden="true">›</span></a></div>
       </div>
     </section>
 
+
     <!-- ============ FAQ ============ -->
-    <section class="faq" id="faq">
-      <div class="wrap faq__wrap">
-        <p class="eyebrow eyebrow--center reveal">Veelgestelde vragen</p>
-        <h2 class="sec-title reveal">Nog vragen over je <span class="hl">project?</span></h2>
-        <div class="faq__list reveal">
+    <section class="faq mx-faq" id="faq">
+      <div class="wrap mx-faq__grid">
+        <div>
+          <p class="eyebrow reveal">Veelgestelde vragen</p>
+          <h2 class="reveal">Nog vragen over <span class="hl">je schilderwerk?</span></h2>
+          <div class="faq__list mx-faq__list reveal">
           <details open><summary>Wat kost schilderwerk ongeveer?</summary><p>Dat hangt af van de oppervlakte, de staat van de ondergrond en de afwerking die je wil. Met onze online calculator heb je in een minuut een richtprijs. Na een gratis plaatsbezoek krijg je een offerte met een vaste prijs.</p></details>
           <details><summary>Betaal ik 6% of 21% btw?</summary><p>Is je woning ouder dan 10 jaar en woon je er zelf, dan geldt meestal het verlaagde tarief van 6%. Voor nieuwere woningen is dat 21%. We zetten het juiste tarief duidelijk op je offerte.</p></details>
           <details><summary>Hoe lang duurt het schilderen?</summary><p>Een gemiddelde kamer is meestal klaar in één tot twee dagen. Een volledige gevel duurt enkele dagen tot een week, afhankelijk van de grootte, de voorbereiding en het weer. Je krijgt vooraf een vaste startdatum.</p></details>
@@ -358,50 +503,72 @@
           <details><summary>Ruikt de verf sterk?</summary><p>Binnen werken we met verf op waterbasis die nauwelijks ruikt. Een kamer kan je meestal dezelfde of de volgende dag weer gebruiken. Even goed verluchten is voldoende.</p></details>
           <details><summary>Wat als er tijdens de werken iets extra nodig is?</summary><p>Dan hoor je dat eerst van ons, met een duidelijke prijs. We doen pas meerwerk na jouw akkoord, zodat je achteraf nooit voor verrassingen staat.</p></details>
           <details><summary>Krijg ik garantie op het werk?</summary><p>Ja. Je krijgt 2 jaar garantie op binnenschilderwerk en tot 10 jaar op buitenschilderwerk, afhankelijk van de ondergrond en het verfsysteem. We leggen dit vooraf duidelijk uit in je offerte.</p></details>
+          </div>
         </div>
-        <p class="faq__more reveal">Staat je vraag er niet bij? <a href="https://wa.me/32468352869" target="_blank" rel="noopener">Stel je vraag aan Yannick</a></p>
+        <aside class="mx-ask reveal">
+          <h3>Staat <span class="hl">jouw vraag</span><br> er niet tussen?</h3>
+          <p>Stel ze gerust rechtstreeks aan Yannick.</p>
+          <div class="mx-ask__who"><span class="mx-ask__av" aria-hidden="true">Y</span><div><b>Yannick <span class="mx-check mx-check--sm"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></b><span>Schilder &amp; oprichter <span class="nw">DECOR-X</span></span></div></div>
+          <a class="btn btn--accent" href="https://wa.me/32468352869" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg> WhatsApp Yannick</a>
+          <a class="btn btn--line" href="tel:+32468352869"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> +32 468 35 28 69</a>
+          <p class="mx-ask__hours"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Ma - Za: 08:00 - 17:00</p>
+        </aside>
       </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact">
-      <div class="wrap contact__grid">
-        <div class="contact__copy">
-          <p class="region"><svg viewBox="0 0 18 13" width="18" height="13" aria-hidden="true"><rect width="6" height="13" fill="#1a1a1a"/><rect x="6" width="6" height="13" fill="#fdda24"/><rect x="12" width="6" height="13" fill="#ef3340"/></svg>Actief regio Antwerpen, Limburg, Vlaams-Brabant</p>
-          <h2>Laten we je woning<br> <span class="hl">samen bekijken.</span></h2>
-          <p>We komen gratis langs, luisteren naar je wensen en geven eerlijk advies. Daarna krijg je een duidelijke offerte met een vaste prijs.</p>
-          <div class="person">
-            <div class="person__avatar" aria-hidden="true">Y</div>
-            <div><b>Yannick Gysen</b><span>Je aanspreekpunt, ma - za van 8u tot 17u</span></div>
-          </div>
-          <ul class="reach">
-            <li><a href="tel:+32468352869"><span class="reach__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Bel ons</small>+32 468 35 28 69</span></a></li>
-            <li><a href="https://wa.me/32468352869" target="_blank" rel="noopener"><span class="reach__ic reach__ic--wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg></span><span><small>Stuur een WhatsApp</small>Chat met Yannick</span></a></li>
+    <section class="mx-ct" id="contact">
+      <div class="wrap mx-ct__grid">
+        <div class="mx-ct__copy">
+          <p class="eyebrow reveal">Contact</p>
+          <h2 class="reveal">Klaar voor een<br> <span class="hl">frisse woning?</span></h2>
+          <p class="reveal">Vragen, een richtprijs of een plaatsbezoek? Kies hiernaast wat je zoekt, of neem rechtstreeks contact met ons op.</p>
+          <ul class="mx-ct__info reveal">
+            <li><span class="mx-ct__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Werkgebied</b><span>Antwerpen, Limburg en Vlaams-Brabant</span></div></li>
+            <li><span class="mx-ct__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>E-mail</b><a href="mailto:info@decor-x.be">info@decor-x.be</a></div></li>
+            <li><span class="mx-ct__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>Telefoon</b><a href="tel:+32468352869">+32 468 35 28 69</a><small>Ma - za: 08:00 - 17:00 · zo: gesloten</small></div></li>
           </ul>
+          <div class="mx-ct__badges reveal">
+            <span><b>5.0</b> <i>★★★★★</i> op Google</span>
+          </div>
         </div>
-        <form class="form" id="form" novalidate>
-          <h3>Plan een gratis plaatsbezoek</h3>
-          <p class="form__intro">Vul je gegevens in, dan nemen we snel contact met je op.</p>
-          <div class="form__row">
-            <label>Naam<input name="naam" type="text" autocomplete="name" required></label>
-            <label>Telefoon<input name="telefoon" type="tel" autocomplete="tel"></label>
+        <div class="mx-pick reveal" id="pick">
+          <div class="mx-pick__menu">
+            <h3>Waar ben je naar op zoek?</h3>
+            <p>We helpen je graag verder.</p>
+            <p class="mx-pick__group">Ontdekken</p>
+            <a class="mx-pick__item" href="#richtprijs"><span class="mx-pick__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 6.5A7 7 0 1 0 17 17.5"/><path d="M4 10h9M4 14h9"/></svg></span><span><b>Wat kost mijn schilderwerk?</b><small>Bereken je richtprijs in 1 minuut</small></span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+            <a class="mx-pick__item" href="#visualizer" data-open-viz><span class="mx-pick__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><span><b>Zie mijn woning in een nieuwe kleur</b><small>Upload een foto van je woning</small></span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+            <p class="mx-pick__group">Klaar om te starten</p>
+            <button class="mx-pick__item mx-pick__item--go" type="button" data-show-form><span class="mx-pick__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><b>Plan een gratis plaatsbezoek</b><small>We bekijken je woning ter plaatse</small></span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+            <a class="mx-pick__item mx-pick__item--go" href="https://wa.me/32468352869" target="_blank" rel="noopener"><span class="mx-pick__ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg></span><span><b>Stuur ons een WhatsApp</b><small>Snel antwoord, ook met foto's van je woning</small></span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
           </div>
-          <div class="form__row">
-            <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
-            <label>Postcode of gemeente<input name="gemeente" type="text" autocomplete="postal-code"></label>
-          </div>
-          <fieldset>
-            <legend>Waarmee kunnen we je helpen?</legend>
-            <div class="choices">
-              <label><input type="checkbox" name="dienst" value="Binnenschilderwerk"><span>Binnenschilderwerk</span></label>
-              <label><input type="checkbox" name="dienst" value="Buitenschilderwerk"><span>Buitenschilderwerk</span></label>
+          <form class="form mx-form" id="form" novalidate hidden>
+            <button class="mx-form__back" type="button" data-hide-form>‹ Terug</button>
+            <h3>Plan een gratis plaatsbezoek</h3>
+            <p class="form__intro">Vul je gegevens in, dan nemen we snel contact met je op.</p>
+            <div class="form__row">
+              <label>Naam<input name="naam" type="text" autocomplete="name" required></label>
+              <label>Telefoon<input name="telefoon" type="tel" autocomplete="tel"></label>
             </div>
-          </fieldset>
-          <label>Vertel iets over je project<textarea name="bericht" rows="4" placeholder="Bv. living en gang, ongeveer 60 m², liefst voor de zomer."></textarea></label>
-          <button class="btn btn--accent btn--lg form__send" type="submit">Plan mijn gratis plaatsbezoek <span aria-hidden="true">›</span></button>
-          <p class="form__safe">Gratis en vrijblijvend · Je gegevens blijven bij ons</p>
-          <p class="form__note" id="note" role="status"></p>
-        </form>
+            <div class="form__row">
+              <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+              <label>Postcode of gemeente<input name="gemeente" type="text" autocomplete="postal-code"></label>
+            </div>
+            <fieldset>
+              <legend>Waarmee kunnen we je helpen?</legend>
+              <div class="choices">
+                <label><input type="checkbox" name="dienst" value="Binnenschilderwerk"><span>Binnenschilderwerk</span></label>
+                <label><input type="checkbox" name="dienst" value="Buitenschilderwerk"><span>Buitenschilderwerk</span></label>
+                <label><input type="checkbox" name="dienst" value="Kaleien"><span>Kaleien</span></label>
+              </div>
+            </fieldset>
+            <label>Vertel iets over je project<textarea name="bericht" rows="3" placeholder="Bv. living en gang, ongeveer 60 m², liefst voor de zomer."></textarea></label>
+            <button class="btn btn--accent btn--lg form__send" type="submit">Plan mijn gratis plaatsbezoek <span aria-hidden="true">›</span></button>
+            <p class="form__safe">Gratis en vrijblijvend · <a href="privacy.html">Je gegevens blijven bij ons</a></p>
+            <p class="form__note" id="note" role="status"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -417,6 +584,7 @@
         <h4>Diensten</h4>
         <a href="schilderwerken-binnen.html">Binnenschilderwerk</a>
         <a href="schilderwerken-buiten.html">Buitenschilderwerk</a>
+        <a href="kaleien.html">Kaleien</a>
       </div>
       <div>
         <h4><span class="nw">DECOR-X</span></h4>
@@ -435,6 +603,7 @@
     <div class="wrap footer__bottom">
       <span>© <span id="year">2026</span> <span class="nw">DECOR-X</span></span>
       <span>Zusterbedrijf van <a href="https://www.mos-x.be" target="_blank" rel="noopener">MOS-X</a></span>
+      <span><a href="privacy.html">Privacy</a> · <a href="algemene-voorwaarden.html">Voorwaarden</a> · <a href="garantie.html">Garantie</a></span>
       <span>BTW BE 0000.000.000</span>
     </div>
   </footer>
@@ -507,6 +676,7 @@
     </form>
   </div>
 
-  <script src="script.js?v=53"></script>
+  <script src="script.js?v=58"></script>
+  <script src="start.js?v=4" defer></script>
 </body>
 </html>

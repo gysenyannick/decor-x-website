@@ -150,11 +150,10 @@
         return false;
       }
       if (step === 3) return soort === 'buiten' || !!val('inrichting');
-      if (step === 4) return /^\d{4}$/.test($('#a-postcode').value.trim()) && $('#a-gemeente').value.trim().length > 1;
       return true;
     };
 
-    const LABELS = ['Wat wil je laten schilderen?', '', 'Nog extra\'s?', 'Waar is je woning?', 'Dit is je richtprijs'];
+    const LABELS = ['Wat wil je laten schilderen?', '', 'Nog extra\'s?', 'Dit is je richtprijs'];
     const render = () => {
       const soort = val('soort');
       calc.dataset.soort = soort || '';
@@ -170,11 +169,11 @@
       $('#extra-q').classList.toggle('calc__q--first', soort === 'buiten');
       $('#w-m2').textContent = `${$('#w-range').value} m²`;
       $('#b-m2').textContent = `${$('#b-range').value} m²`;
-      back.hidden = step === 1 || step === 5;
-      next.hidden = step === 1 || step === 5;   // stap 1 gaat vanzelf verder na een keuze
+      back.hidden = step === 1 || step === 4;
+      next.hidden = step === 1 || step === 4;   // stap 1 gaat vanzelf verder na een keuze
       next.disabled = !ready();
-      next.innerHTML = step === 4 ? 'Toon mijn richtprijs ›' : 'Volgende ›';
-      if (step === 5) $('#calc-price').textContent = price();
+      next.innerHTML = step === 3 ? 'Toon mijn richtprijs ›' : 'Volgende ›';
+      if (step === 4) $('#calc-price').textContent = price();
     };
     calc.addEventListener('input', render);
     calc.addEventListener('change', render);
@@ -208,13 +207,11 @@
       else if (val('omvang') === 'woning') wat = `volledige woning van ${$('#w-range').value} m²: ${lijst(vals('w-delen'))}`;
       else wat = roomList().map((r, i) => `kamer ${i + 1} (${val(`r${r.dataset.room}-grootte`, r)}): ${lijst(vals(`r${r.dataset.room}-delen`, r))}`).join('; ');
       const extra = $$(`input[name="${buiten ? 'b-extra' : 'extra'}"]:checked`, calc).map(text);
-      const plaats = `${$('#a-postcode').value.trim()} ${$('#a-gemeente').value.trim()}`;
       const regels = [`${dienst}, ${wat}.`];
       if (!buiten) regels.push(`De woning is ${val('inrichting')}.`);
       if (extra.length) regels.push(`Extra's: ${extra.join(', ')}.`);
-      regels.push(`Adres: ${[$('#a-straat').value.trim(), plaats].filter(Boolean).join(', ')}.`, `Richtprijs calculator: ${price()} (excl. btw).`);
+      regels.push(`Richtprijs calculator: ${price()} (excl. btw).`);
       form.elements.bericht.value = regels.join('\n');
-      form.elements.gemeente.value = plaats;
     });
     render();
   }
@@ -459,7 +456,7 @@
     const closeEditor = () => { ed.hidden = true; document.body.style.overflow = ''; closeGate(); };
 
     $('#viz-file').addEventListener('change', (e) => { const f = e.target.files[0]; if (f) openEditor(URL.createObjectURL(f)); e.target.value = ''; });
-    $$('.viz__samples button', calcBox).forEach((b) => b.addEventListener('click', () => openEditor(b.dataset.src)));
+    $$('.viz__samples button').forEach((b) => b.addEventListener('click', () => openEditor(b.dataset.src)));
     $('#ed-back').addEventListener('click', closeEditor);
     // Plaatsbezoek vanuit de visualizer: de gekozen kleuren gaan mee in het formulier
     edSend.addEventListener('click', () => {
@@ -562,22 +559,98 @@
     arrows();
   }
 
+  // AI-visualizer opent onder de kleurbanner
+  // Toolbox: richtprijs, AI-visualizer en verfcalculator achter drie tikbare balken
+  const toolTabs = $$('.tbx__tab');
+  const openTool = (name, scroll) => {
+    const box = $('#toolbox');
+    if (box) box.dataset.active = name;
+    toolTabs.forEach((t) => {
+      const on = t.dataset.tool === name;
+      t.setAttribute('aria-selected', on);
+      $(`#tool-${t.dataset.tool}`).hidden = !on;
+    });
+    if (scroll) {
+      const tab = toolTabs.find((t) => t.dataset.tool === name);
+      setTimeout(() => (tab || $('#toolbox')).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }), 30);
+    }
+  };
+  toolTabs.forEach((t) => t.addEventListener('click', () => openTool(t.dataset.tool)));
+  if (toolTabs.length) openTool('kleur');
+  // voor/na in de toolbox, daarna de echte visualizer
+  const tbxBa = $('#tbx-ba');
+  const startViz = () => { if (tbxBa) tbxBa.hidden = true; const v = $('#visualizer'); if (v) v.hidden = false; };
+  if (tbxBa) {
+    const range = $('.tbx-ba__range', tbxBa);
+    range.addEventListener('input', () => tbxBa.style.setProperty('--pos', `${range.value}%`));
+    $('[data-viz-start]', tbxBa).addEventListener('click', startViz);
+  }
+  $$('[data-tool-open]').forEach((b) => b.addEventListener('click', () => openTool(b.dataset.toolOpen, true)));
+  $$('a[href="#richtprijs"]').forEach((a) => a.addEventListener('click', (e) => { if (!toolTabs.length) return; e.preventDefault(); openTool('prijs', true); }));
+  if (location.hash === '#richtprijs') setTimeout(() => openTool('prijs', true), 300);
+  const openViz = () => { openTool('kleur', true); startViz(); };
+
+  // Verfcalculator
+  const pc = $('#pc');
+  if (pc) {
+    const n = (id) => Math.max(0, parseFloat(($(id).value || '0').replace(',', '.')) || 0);
+    const fmt = (x) => x.toLocaleString('nl-BE', { maximumFractionDigits: 1 });
+    const pcVal = (name) => ($(`input[name="${name}"]:checked`, pc) || {}).value;
+    let pcText = '';
+    const pcCalc = () => {
+      const kamer = pcVal('pc-mode') === 'kamer';
+      $$('[data-pc]', pc).forEach((d) => (d.hidden = d.dataset.pc !== (kamer ? 'kamer' : 'm2')));
+      let m2;
+      if (kamer) {
+        const l = n('#pc-l'), b = n('#pc-b'), h = n('#pc-h');
+        m2 = Math.max(0, 2 * (l + b) * h - n('#pc-ramen') * 1.5 - n('#pc-deuren') * 1.8);
+        if ($('#pc-plafond').checked) m2 += l * b;
+      } else m2 = n('#pc-m2');
+      const lagen = Number(pcVal('pc-lagen') || 2);
+      const rendement = Number(pcVal('pc-ond') || 10);
+      const liter = Math.ceil((m2 * lagen / rendement) * 2) / 2;
+      const p10 = Math.floor(liter / 10);
+      let rest = liter - p10 * 10;
+      let pots = [];
+      if (rest > 7.5) { pots.push(`${p10 + 1} ${p10 + 1 === 1 ? 'pot' : 'potten'} van 10 liter`); rest = 0; }
+      else if (p10) pots.push(`${p10} ${p10 === 1 ? 'pot' : 'potten'} van 10 liter`);
+      const p25 = Math.ceil(rest / 2.5);
+      if (p25) pots.push(`${p25} ${p25 === 1 ? 'pot' : 'potten'} van 2,5 liter`);
+      $('#pc-liter').textContent = `${fmt(liter)} liter`;
+      $('#pc-info').textContent = `Voor ${fmt(Math.round(m2))} m², ${lagen} ${lagen === 1 ? 'laag' : 'lagen'}${pots.length ? ` · bv. ${pots.join(' en ')}` : ''}`;
+      pcText = `Verfcalculator: ongeveer ${fmt(Math.round(m2))} m², ${lagen} ${lagen === 1 ? 'laag' : 'lagen'}, ${fmt(liter)} liter verf.`;
+    };
+    pc.addEventListener('input', pcCalc);
+    pc.addEventListener('change', pcCalc);
+    pcCalc();
+    $('#pc-book').addEventListener('click', () => { form.elements.bericht.value = pcText; });
+  }
+
   // Voor en na: schuif om te vergelijken
   const ba = $('#ba');
   if (ba) {
     const range = $('.ba__range', ba);
     range.addEventListener('input', () => ba.style.setProperty('--pos', `${range.value}%`));
-    $('#ba-viz').addEventListener('click', () => { const t = $('.mode [data-mode="viz"]'); if (t) t.click(); });
+    const bv = $('#ba-viz'); if (bv) bv.addEventListener('click', (e) => { e.preventDefault(); openViz(); });
   }
 
   // Vanaf een andere pagina: index.html#visualizer opent meteen de AI-visualizer
-  if (location.hash === '#visualizer') {
-    const t = $('.mode [data-mode="viz"]');
-    if (t) { t.click(); $('#richtprijs').scrollIntoView(); }
-  }
+  if (location.hash === '#visualizer') setTimeout(openViz, 300);
 
   // Diensten: de AI-visualizer-kaart opent meteen de visualizer
-  $$('[data-open-viz]').forEach((b) => b.addEventListener('click', () => { const t = $('.mode [data-mode="viz"]'); if (t) t.click(); }));
+  // contact: keuzemenu of formulier
+  const pickMenu = $('.mx-pick__menu');
+  const showForm = (on) => {
+    if (!pickMenu) return;
+    pickMenu.hidden = on;
+    $('#form').hidden = !on;
+  };
+  $$('[data-show-form]').forEach((b) => b.addEventListener('click', () => showForm(true)));
+  $$('[data-hide-form]').forEach((b) => b.addEventListener('click', () => showForm(false)));
+  $$('a[href="#contact"]').forEach((a) => {
+    if (/plaatsbezoek/i.test(a.textContent)) a.addEventListener('click', () => showForm(true));
+  });
+  $$('[data-open-viz]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); openViz(); }));
 
   // Diensten: de achtergrondgloed volgt de muis
   const svcSec = $('.services');
@@ -658,9 +731,10 @@
       '',
       f.bericht.value,
     ].join('\n');
-    location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Aanvraag plaatsbezoek — ${f.naam.value}`)}&body=${encodeURIComponent(body)}`;
+    // Zolang er geen formulier-koppeling is, gaat de aanvraag via WhatsApp (betrouwbaarder dan een mailprogramma).
+    window.open(`https://wa.me/32468352869?text=${encodeURIComponent(`Hallo Yannick, ik wil graag een gratis plaatsbezoek.\n\n${body}`)}`, '_blank', 'noopener');
     note.classList.remove('is-err');
-    note.textContent = 'Je mailprogramma opent met je aanvraag. Even op verzenden klikken en wij doen de rest.';
+    note.textContent = 'Je aanvraag staat klaar in WhatsApp. Even op verzenden tikken en wij doen de rest.';
   });
 
   $('#year').textContent = new Date().getFullYear();

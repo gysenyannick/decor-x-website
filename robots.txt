@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gysenyannick.github.io/decor-x-website/sitemap.xml
