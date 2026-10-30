@@ -217,7 +217,7 @@
   }
 
   // Switch tussen richtprijs en AI-visualizer
-  const calcBox = $('#calc');
+  const calcBox = $('#calc') || $('#toolbox') || $('#viz-modal');
   if (calcBox) {
     $$('.mode button').forEach((b) => b.addEventListener('click', () => {
       calcBox.dataset.mode = b.dataset.mode;
@@ -461,7 +461,12 @@
     // Plaatsbezoek vanuit de visualizer: de gekozen kleuren gaan mee in het formulier
     edSend.addEventListener('click', () => {
       closeEditor();
-      if (edSend.dataset.kleuren) form.elements.bericht.value = `Ik heb de AI-visualizer gebruikt. Mijn kleuren: ${edSend.dataset.kleuren}.`;
+      if (edSend.dataset.kleuren) {
+        const txt = `Ik heb de AI-visualizer gebruikt. Mijn kleuren: ${edSend.dataset.kleuren}.`;
+        form.elements.bericht.value = txt;
+        const sp = document.getElementById('sp-form');
+        if (sp) sp.elements.bericht.value = txt;
+      }
     });
     $('#ed-reset').addEventListener('click', () => { painted.clear(); paint(); updateUI(); });
     const cmp = $('#ed-compare');
@@ -509,7 +514,7 @@
         email: f.email.value.trim(), telefoon: f.telefoon.value.trim(), postcode: f.postcode.value.trim(),
         bron: 'AI-visualizer', akkoord: true,
       };
-      if (LEAD_ENDPOINT) fetch(LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(lead) }).catch(() => {});
+      if (window.decorxQuiet) window.decorxQuiet(lead);
       // het contactformulier alvast invullen
       form.elements.naam.value = lead.naam;
       form.elements.email.value = lead.email;
@@ -588,7 +593,27 @@
   $$('[data-tool-open]').forEach((b) => b.addEventListener('click', () => openTool(b.dataset.toolOpen, true)));
   $$('a[href="#richtprijs"]').forEach((a) => a.addEventListener('click', (e) => { if (!toolTabs.length) return; e.preventDefault(); openTool('prijs', true); }));
   if (location.hash === '#richtprijs') setTimeout(() => openTool('prijs', true), 300);
-  const openViz = () => { openTool('kleur', true); startViz(); };
+  // AI-visualizer: venster om een foto te kiezen (zoals bij MOS-X)
+  const vm = $('#viz-modal');
+  const openViz = () => { if (!vm) return; vm.hidden = false; document.body.style.overflow = 'hidden'; requestAnimationFrame(() => vm.classList.add('is-open')); };
+  const closeViz = (keepLock) => { if (!vm) return; vm.classList.remove('is-open'); vm.hidden = true; if (!keepLock) document.body.style.overflow = ''; };
+  if (vm) {
+    vm.addEventListener('click', (e) => { if (e.target.closest('[data-vm-close]')) closeViz(); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && !vm.hidden) closeViz(); });
+    // een foto kiezen sluit dit venster; de editor neemt over
+    $('#viz-file').addEventListener('change', () => closeViz(true), true);
+    $$('.vm__samples button').forEach((b) => b.addEventListener('click', () => closeViz(true), true));
+    const drop = $('#vm-drop');
+    ['dragenter', 'dragover'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('is-over'); }));
+    ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, () => drop.classList.remove('is-over')));
+    drop.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const file = e.dataTransfer.files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+      const dt = new DataTransfer(); dt.items.add(file);
+      const inp = $('#viz-file'); inp.files = dt.files; inp.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  }
 
   // Verfcalculator
   const pc = $('#pc');
@@ -731,10 +756,15 @@
       '',
       f.bericht.value,
     ].join('\n');
-    // Zolang er geen formulier-koppeling is, gaat de aanvraag via WhatsApp (betrouwbaarder dan een mailprogramma).
-    window.open(`https://wa.me/32468352869?text=${encodeURIComponent(`Hallo Yannick, ik wil graag een gratis plaatsbezoek.\n\n${body}`)}`, '_blank', 'noopener');
     note.classList.remove('is-err');
-    note.textContent = 'Je aanvraag staat klaar in WhatsApp. Even op verzenden tikken en wij doen de rest.';
+    note.textContent = 'Even geduld…';
+    const lead = { naam: f.naam.value.trim(), telefoon: f.telefoon.value.trim(), email: f.email.value.trim(), gemeente: f.gemeente.value.trim(), dienst: diensten, bericht: f.bericht.value.trim(), bron: 'Contactformulier homepage' };
+    (window.decorxSend ? window.decorxSend(lead) : Promise.resolve('mail')).then((how) => {
+      note.textContent = how === 'sent'
+        ? 'Bedankt! We hebben je aanvraag goed ontvangen en nemen binnen 1 werkdag contact met je op.'
+        : 'Je aanvraag staat klaar in je mailprogramma. Klik daar nog op verzenden, of bel ons op +32 468 35 28 69.';
+      if (how === 'sent') form.reset();
+    });
   });
 
   $('#year').textContent = new Date().getFullYear();
